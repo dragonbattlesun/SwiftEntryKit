@@ -9,7 +9,7 @@
 import UIKit
 
 extension UILabel {
-    var style: EKProperty.LabelStyle {
+    public var style: EKProperty.LabelStyle {
         set {
             font = newValue.font
             textColor = newValue.color(for: traitCollection)
@@ -24,7 +24,7 @@ extension UILabel {
         }
     }
     
-    var content: EKProperty.LabelContent {
+    public var content: EKProperty.LabelContent {
         set {
             text = newValue.text
             accessibilityIdentifier = newValue.accessibilityIdentifier
@@ -37,7 +37,7 @@ extension UILabel {
 }
 
 extension UIButton {
-    var buttonContent: EKProperty.ButtonContent {
+    public var buttonContent: EKProperty.ButtonContent {
         set {
             setTitle(newValue.label.text, for: .normal)
             setTitleColor(newValue.label.style.color(for: traitCollection), for: .normal)
@@ -55,7 +55,7 @@ extension UIButton {
 }
 
 extension UIImageView {
-    var imageContent: EKProperty.ImageContent {
+    public var imageContent: EKProperty.ImageContent {
         set {
             stopAnimating()
             if newValue.images.count == 1 {
@@ -115,7 +115,7 @@ extension UIImageView {
 
 extension UITextField {
     
-    var placeholder: EKProperty.LabelContent {
+    public var placeholder: EKProperty.LabelContent {
         set {
             attributedPlaceholder = NSAttributedString(
                 string: newValue.text,
@@ -130,7 +130,7 @@ extension UITextField {
         }
     }
     
-    var textFieldContent: EKProperty.TextFieldContent {
+    public var textFieldContent: EKProperty.TextFieldContent {
         set {
             placeholder = newValue.placeholder
             keyboardType = newValue.keyboardType
